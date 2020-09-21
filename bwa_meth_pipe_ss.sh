@@ -22,4 +22,8 @@ source activate bwa_meth
 ### fastqc ${out}"/trim_data/"${name}_2.fastq --outdir=${out}"/qc_posttrim/"
 
 #### map with bwa_meth
-bwameth.py --reference /mnt/home/smaguire/work/rloops/reference_files/m13_ref.fasta ${out}"/trim_data/"${name}_1.fastq ${out}"/trim_data/"${name}_2.fastq > ${out}"/mapped_data/"${name}".sam"
+bwameth.py --reference /mnt/home/smaguire/work/rloops/reference_files/m13_ref.fasta ${out}"/trim_data/"${name}_1.fastq ${out}"/trim_data/"${name}_2.fastq | \
+samtools samtools view -b - > ${out}"/mapped_data/"${name}".bam"
+
+#### extract methylation amounts with methyldackel
+MethylDackel extract /mnt/home/smaguire/work/rloops/reference_files/m13_ref.fasta ${out}"/mapped_data/"${name}".bam"
