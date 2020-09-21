@@ -12,5 +12,5 @@ do
 new_name=${i#$data_path/}
 new_name=${new_name%_L001_R1_001.fastq.gz}
 echo $new_name 
-qsub -v r1=$data_path/$new_name"_L001_R1_001.fastq.gz",r2=$data_path/$new_name"_L001_R2_001.fastq.gz",out=$output_path bwa_meth_pipe.sh
+qsub -v r1=$data_path/$new_name"_L001_R1_001.fastq.gz",r2=$data_path/$new_name"_L001_R2_001.fastq.gz",out=$output_path,name=$new_name bwa_meth_pipe.sh
 done
