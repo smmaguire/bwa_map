@@ -1,8 +1,8 @@
 #!/bin/bash
 
-data_path=/home/smaguire/work/rloops/data/apobec_concentration
-mkdir -p /home/smaguire/work/rloops/apobec_concentration_output
-output_path=/home/smaguire/work/rloops/apobec_concentration_output
+data_path=/mnt/home/smaguire/work/rloops/data/apobec_concentration
+mkdir -p /mnt/home/smaguire/work/rloops/apobec_concentration_output
+output_path=/mnt/home/smaguire/work/rloops/apobec_concentration_output
 mkdir -p $output_path"/qc_pretrim"
 mkdir -p $output_path"/qc_posttrim"
 mkdir -p $output_path"/trim_data"
