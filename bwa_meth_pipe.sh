@@ -11,4 +11,10 @@ source activate bwa_meth
 fastqc ${r1} --outdir=${out}"/qc_pretrim/"
 fastqc ${r2} --outdir=${out}"/qc_pretrim/"
 
-flexbar -r ${r1} -p ${r2} -aa TruSeq -ap ON -t ${out}"/trim_data/"${name}".fastq"
+### Trim reads
+flexbar -r ${r1} -p ${r2} -aa TruSeq -ap ON -t ${out}"/trim_data/"${name}
+
+### fastqc2
+fastqc ${out}"/trim_data/"${name}_1.fastq --outdir=${out}"/qc_posttrim/"
+fastqc ${out}"/trim_data/"${name}_2.fastq --outdir=${out}"/qc_posttrim/"
+
