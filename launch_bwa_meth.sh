@@ -6,6 +6,7 @@ output_path=/mnt/home/smaguire/work/rloops/apobec_concentration_output
 mkdir -p $output_path"/qc_pretrim"
 mkdir -p $output_path"/qc_posttrim"
 mkdir -p $output_path"/trim_data"
+mkdir -p $output_path"/mapped_data"
 
 for i in $( ls $data_path/dsDNA*_L001_R1_001.fastq.gz);
 do
