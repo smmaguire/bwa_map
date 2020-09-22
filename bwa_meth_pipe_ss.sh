@@ -27,4 +27,4 @@ samtools view -b - | samtools sort - > ${out}"/mapped_data/"${name}".bam"
 samtools index ${out}"/mapped_data/"${name}".bam"
 
 #### extract methylation amounts with methyldackel
-MethylDackel extract /mnt/home/smaguire/work/rloops/reference_files/m13_ref.fasta ${out}"/mapped_data/"${name}".bam"
+##### ATM this is being done on local machine because it causes a seg fault on the server. 
