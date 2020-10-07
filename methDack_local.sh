@@ -1,6 +1,6 @@
 #!/bin/bash
-###source activate methylDackel
+source activate methylDackel
 
 for i in $( ls *.bam); do
-	MethylDackel extract m13_ref.fasta $i
+	MethylDackel extract ptw120.fasta $i
 done
