@@ -13,7 +13,7 @@ do
 new_name=${i#$data_path/}
 new_name=${new_name%.1.fastq.gz}
 echo $new_name 
-qsub -v r1=$data_path/$new_name".1.fastq.gz",r2=$data_path/$new_name".2.fastq.gz",out=$output_path,name=$new_name bwa_meth_pipe_ds.sh
+qsub -v r1=$data_path/$new_name".1.fastq.gz",r2=$data_path/$new_name".2.fastq.gz",out=$output_path,name=$new_name bwa_meth_pipe_tagmentation.sh
 done
 
 
