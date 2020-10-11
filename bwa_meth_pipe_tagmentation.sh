@@ -19,7 +19,7 @@ fastqc ${out}"/trim_data/"${name}_1.fastq --outdir=${out}"/qc_posttrim/"
 fastqc ${out}"/trim_data/"${name}_2.fastq --outdir=${out}"/qc_posttrim/"
 
 #### map with bwa_meth
-bwameth.py --reference /mnt/home/smaguire/work/rloops/reference_files/ptw120_ref.fasta ${out}"/trim_data/"${name}_1.fastq ${out}"/trim_data/"${name}_2.fastq | \
+bwameth.py --reference $reference ${out}"/trim_data/"${name}_1.fastq ${out}"/trim_data/"${name}_2.fastq | \
 samtools view -b - | samtools sort - > ${out}"/mapped_data/"${name}".bam"
 samtools index ${out}"/mapped_data/"${name}".bam"
 
