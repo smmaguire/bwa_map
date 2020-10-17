@@ -1,20 +1,20 @@
 #!/bin/bash
 
-data_path=/mnt/home/smaguire/work/rloops/data/apobec_concentration/apo_con3
-output_path=/mnt/home/smaguire/work/rloops/apobec_concentration_output/apo_con3
-reference_path=/mnt/home/smaguire/work/rloops/reference_files/lambda.fasta
+data_path=/mnt/home/smaguire/work/rloops/data/whole_genome_method/tagment_plasmid4
+output_path=/mnt/home/smaguire/work/rloops/whole_genome_method_output/tagment_plasmid4
+reference_path=/mnt/home/smaguire/work/rloops/reference_files/ptw120_ref.fasta
 mkdir -p $output_path
 mkdir -p $output_path"/qc_pretrim"
 mkdir -p $output_path"/qc_posttrim"
 mkdir -p $output_path"/trim_data"
 mkdir -p $output_path"/mapped_data"
 
-for i in $( ls $data_path/*.1.fastq.gz);
+for i in $( ls $data_path/*_L001_R1_001.fastq.gz);
 do
 new_name=${i#$data_path/}
-new_name=${new_name%.1.fastq.gz}
+new_name=${new_name%_L001_R1_001.fastq.gz}
 echo $new_name 
-qsub -v r1=$data_path/$new_name".1.fastq.gz",r2=$data_path/$new_name".2.fastq.gz",out=$output_path,name=$new_name,reference=$reference_path bwa_meth_pipe.sh
+qsub -v r1=$data_path/$new_name"_L001_R1_001.fastq.gz",r2=$data_path/$new_name"_L001_R2_001.fastq.gz",out=$output_path,name=$new_name,reference=$reference_path bwa_meth_pipe.sh
 done
 
 
