@@ -23,7 +23,7 @@ fastqc ${out}"/trim_data/"${name}_2.fastq --outdir=${out}"/qc_posttrim/"
 bwameth.py --reference $reference ${out}"/trim_data/"${name}_1.fastq ${out}"/trim_data/"${name}_2.fastq | \
 samtools view -b - | samtools sort - > ${out}"/mapped_data/"${name}".bam"
 samtools index ${out}"/mapped_data/"${name}".bam"
-
+samtools flagstat -O tsv ${out}"/mapped_data/"${name}".bam" > ${out}"/mapped_data/"${name}"_mappingStats.tsv"
 #### extract methylation amounts with methyldackel
 #### MethylDackel extract /mnt/home/smaguire/work/rloops/reference_files/m13_ref.fasta ${out}"/mapped_data/"${name}".bam"
 
