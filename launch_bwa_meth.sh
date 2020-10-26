@@ -1,7 +1,7 @@
 #!/bin/bash
 
-data_path=/mnt/home/smaguire/work/rloops/data/whole_genome_method/tagment_plasmid4
-output_path=/mnt/home/smaguire/work/rloops/whole_genome_method_output/tagment_plasmid4
+data_path=/mnt/home/smaguire/work/rloops/data/whole_genome_method/tagment_plasmid5
+output_path=/mnt/home/smaguire/work/rloops/whole_genome_method_output/tagment_plasmid5
 reference_path=/mnt/home/smaguire/work/rloops/reference_files/ptw120_new_orient.fasta
 mkdir -p $output_path"/qc_pretrim"
 mkdir -p $output_path"/qc_posttrim"
